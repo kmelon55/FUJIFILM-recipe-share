@@ -1,0 +1,9 @@
+extends base
+include mixins/video
+
+block content 
+    div.home__videos
+        each video in videos 
+            +video(video)
+        else
+            span.empty__message No videos found
