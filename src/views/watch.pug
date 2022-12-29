@@ -2,8 +2,10 @@ extends base
 
 block content
     div#recipeContainer(data-id=recipe._id)
-        video(src="/" + recipe.fileUrl, controls)
-    
+        div
+            each imgUrl in recipe.fileUrl
+                img.photos(src="/" + imgUrl)
+
         div
             p=recipe.description
             small=recipe.createdAt

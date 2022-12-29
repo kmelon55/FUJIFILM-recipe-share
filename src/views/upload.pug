@@ -5,7 +5,7 @@ block content
         span=errorMessage
     form(method="POST", enctype="multipart/form-data")
         label(for="recipe") recipe File 
-        input(type="file", accept="recipe/*", required, id="recipe", name="recipe")
+        input(type="file", accept="image/*", multiple, required, id="recipe", name="recipe")
         label(for="thumb") Thumbnail File 
         input(type="file", accept="image/*", required, id="thumb", name="thumb")
         input(placeholder="Title", required, type="text", name="title", maxlength=80)

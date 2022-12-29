@@ -71,7 +71,7 @@ export const postUpload = async (req, res) => {
     const newRecipe = await Recipe.create({
       title,
       description,
-      fileUrl: recipe[0].path,
+      fileUrl: Recipe.filesArray(recipe),
       thumbUrl: thumb[0].path,
       owner: _id,
       hashtags: Recipe.formatHashtags(hashtags),

@@ -26,7 +26,7 @@ recipeRouter
   .get(getUpload)
   .post(
     recipeUpload.fields([
-      { name: "recipe", maxCount: 1 },
+      { name: "recipe", maxCount: 10 },
       { name: "thumb", maxCount: 1 },
     ]),
     postUpload
