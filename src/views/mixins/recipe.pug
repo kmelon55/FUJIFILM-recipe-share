@@ -1,0 +1,8 @@
+mixin recipe(recipe)
+    a(href=`/recipes/${recipe.id}`).recipe-mixin
+        div.recipe-mixin__thumb(style=`background-image:url(${recipe.thumbUrl});background-size:cover;background-position:center;`)
+        div.recipe-mixin__data
+            span.recipe-mixin__title=recipe.title
+            div.recipe-mixin__meta
+                span #{recipe.owner.name} • 
+                span #{recipe.meta.view} 회 

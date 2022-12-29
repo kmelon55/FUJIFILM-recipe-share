@@ -1,5 +1,5 @@
 extends base 
-include mixins/video 
+include mixins/recipe 
 
 block content 
     form(method="GET").search-form
@@ -7,8 +7,8 @@ block content
         button
             i.fas.fa-search
 
-    div.video-grid
-        each video in videos 
-            +video(video)
+    div.recipe-grid
+        each recipe in recipes 
+            +recipe(recipe)
         else 
-            span.empty__message No videos found
+            span.empty__message No recipes found

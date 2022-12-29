@@ -4,7 +4,7 @@ import session from "express-session";
 import flash from "express-flash";
 import MongoStore from "connect-mongo";
 import globalRouter from "./routers/rootRouter";
-import videoRouter from "./routers/videoRouter";
+import recipeRouter from "./routers/recipeRouter";
 import userRouter from "./routers/userRouter";
 import apiRouter from "./routers/apiRouter";
 import { localMiddleware } from "./middlewares";
@@ -13,7 +13,7 @@ const app = express();
 const logger = morgan("dev");
 
 app.get("/favicon.ico", (req, res) => {
-  res.status(204);
+  res.sendStatus(204);
 });
 app.set("view engine", "pug");
 app.set("views", process.cwd() + "/src/views");
@@ -37,7 +37,7 @@ app.use(localMiddleware);
 app.use("/", globalRouter);
 app.use("/uploads", express.static("uploads"));
 app.use("/static", express.static("assets"));
-app.use("/videos", videoRouter);
+app.use("/recipes", recipeRouter);
 app.use("/users", userRouter);
 app.use("/api", apiRouter);
 

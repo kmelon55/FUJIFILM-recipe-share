@@ -1,9 +1,9 @@
 extends base
-include mixins/video
+include mixins/recipe
 
 block content 
-    div.home__videos
-        each video in videos 
-            +video(video)
+    div.home__recipes
+        each recipe in recipes 
+            +recipe(recipe)
         else
-            span.empty__message No videos found
+            span.empty__message No recipes found

@@ -1,30 +1,31 @@
 extends base
 
 block content
-    div#videoContainer(data-id=video._id)
-        video(src="/" + video.fileUrl, controls)
+    div#recipeContainer(data-id=recipe._id)
+        video(src="/" + recipe.fileUrl, controls)
     
         div
-            p=video.description
-            small=video.createdAt
+            p=recipe.description
+            small=recipe.createdAt
         div 
             small Uploaded by 
-            a(href=`/users/${video.owner._id}`)=video.owner.name
-        if String(video.owner._id) === String(loggedInUser._id)
-            a(href=`${video.id}/edit`) Edit Video &rarr;
+            a(href=`/users/${recipe.owner._id}`)=recipe.owner.name
+        if String(recipe.owner._id) === String(loggedInUser._id)
+            a(href=`${recipe.id}/edit`) Edit Recipe &rarr;
             br
-            a(href=`${video.id}/delete`) Delete Video &rarr;
+            a(href=`${recipe.id}/delete`) Delete Recipe &rarr;
 
 
-    div.video__comments
-        form.video__comment-form#commentForm
+    div.recipe__comments
+        form.recipe__comment-form#commentForm
             textarea(cols="30", rows="10" placeholder="Write a nice comment!")
             button Add comment
-    div.video__comments
+    div.recipe__comments
         ul 
-            each comment in video.comment.reverse()
-                li.video__comment(data-id=comment.id)=comment.text
+            each comment in recipe.comment.reverse()
+                li.recipe__comment(data-id=comment.id)=comment.text
+                    if String(recipe.owner._id) === String(loggedInUser._id)
+                        button.comment__delete-btn  ❌
 
-    block scripts 
-        script(src="/static/js/videoPlayer.js")
-        script(src="/static/js/commentSection.js")
+block scripts 
+    script(src="/static/js/commentSection.js")

@@ -4,11 +4,11 @@ block content
     if errorMessage 
         span=errorMessage
     form(method="POST", enctype="multipart/form-data")
-        label(for="video") Video File 
-        input(type="file", accept="video/*", required, id="video", name="video")
+        label(for="recipe") recipe File 
+        input(type="file", accept="recipe/*", required, id="recipe", name="recipe")
         label(for="thumb") Thumbnail File 
         input(type="file", accept="image/*", required, id="thumb", name="thumb")
         input(placeholder="Title", required, type="text", name="title", maxlength=80)
         input(placeholder="Description", required, type="text", name="description", minlength=2)
         input(placeholder="Hashtags, serprated by comma.", required, type="text", name="hashtags")
-        input(type="submit", value="Upload Video")
+        input(type="submit", value="Upload recipe")

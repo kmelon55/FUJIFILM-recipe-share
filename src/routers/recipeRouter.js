@@ -5,31 +5,31 @@ import {
   postEdit,
   getUpload,
   postUpload,
-  deleteVideo,
-} from "../controllers/videoControllers";
-import { protectorMiddleware, videoUpload } from "../middlewares";
-const videoRouter = express.Router();
+  deleterecipe,
+} from "../controllers/recipeControllers";
+import { protectorMiddleware, recipeUpload } from "../middlewares";
+const recipeRouter = express.Router();
 
-videoRouter.get("/:id([0-9a-f]{24})", watch);
-videoRouter
+recipeRouter.get("/:id([0-9a-f]{24})", watch);
+recipeRouter
   .route("/:id([0-9a-f]{24})/edit")
   .all(protectorMiddleware)
   .get(getEdit)
   .post(postEdit);
-videoRouter
+recipeRouter
   .route("/:id([0-9a-f]{24})/delete")
   .all(protectorMiddleware)
-  .get(deleteVideo);
-videoRouter
+  .get(deleterecipe);
+recipeRouter
   .route("/upload")
   .all(protectorMiddleware)
   .get(getUpload)
   .post(
-    videoUpload.fields([
-      { name: "video", maxCount: 1 },
+    recipeUpload.fields([
+      { name: "recipe", maxCount: 1 },
       { name: "thumb", maxCount: 1 },
     ]),
     postUpload
   );
 
-export default videoRouter;
+export default recipeRouter;

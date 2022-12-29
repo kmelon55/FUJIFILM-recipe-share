@@ -1,18 +1,18 @@
-.video-mixin {
-  .video-mixin__thumb {
+.recipe-mixin {
+  .recipe-mixin__thumb {
     height: 140px;
     border-radius: 7px;
     width: 100%;
     background-color: ivory;
   }
-  .video-mixin__data {
+  .recipe-mixin__data {
     padding: 0px 15px;
-    .video-mixin__title {
+    .recipe-mixin__title {
       font-size: 18px;
       display: block;
       margin-top: 10px;
     }
-    .video-mixin__meta {
+    .recipe-mixin__meta {
       margin-top: 5px;
       font-size: 12px;
     }

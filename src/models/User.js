@@ -12,10 +12,10 @@ const userSchema = new mongoose.Schema({
   comment: [
     { type: mongoose.Schema.Types.ObjectId, required: true, ref: "Comment" },
   ],
-  videos: [
+  recipes: [
     {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "Video",
+      ref: "Recipe",
     },
   ],
 });
