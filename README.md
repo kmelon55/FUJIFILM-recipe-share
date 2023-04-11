@@ -1,4 +1,4 @@
-# Wetube Reloaded
+# FUJIFILM recipe share community
 
 / -> home
 /join -> Join
